@@ -1,0 +1,291 @@
+{
+  "questions": [
+    {
+      "question": "1.Co w życiu jest za darmo ",
+      "answers": [
+        {
+          "text": "Wpierdol",
+          "points": 32,
+          "isShow": false
+        },
+        {
+          "text": "Powietrze",
+          "points": 24,
+          "isShow": false
+        },
+        {
+          "text": "nic",
+          "points": 12,
+          "isShow": false
+        },
+        {
+          "text": "Przyjaciele",
+          "points": 10,
+          "isShow": false
+        },
+        {
+          "text": "Miłość",
+          "points": 16,
+          "isShow": false
+        },
+        {
+          "text": "Smierć",
+          "points": 5,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "2.W sypialni na P",
+      "answers": [
+        {
+          "text": "Poduszka",
+          "points": 44,
+          "isShow": false
+        },
+        {
+          "text": "Pierdolenie",
+          "points": 15,
+          "isShow": false
+        },
+        {
+          "text": "Pizda np nad głową",
+          "points": 12,
+          "isShow": false
+        },
+        {
+          "text": "Pościel",
+          "points": 20,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "3.Wymień Laureata złotego nachosa\nw dowolnej kategorii w roku 2023",
+      "answers": [
+        {
+          "text": "Mariusz",
+          "points": 30,
+          "isShow": false
+        },
+        {
+          "text": "Łukasz",
+          "points": 28,
+          "isShow": false
+        },
+        {
+          "text": "Marysia",
+          "points": 20,
+          "isShow": false
+        },
+        {
+          "text": "Żona mojego kolegi Rafała - Joanna",
+          "points": 10,
+          "isShow": false
+        },
+        {
+          "text": "Adrian",
+          "points": 5,
+          "isShow": false
+        },
+        {
+          "text": "Rysiu",
+          "points": 4,
+          "isShow": false
+        },
+        {
+          "text": "Agnieszka Piekło",
+          "points": 3,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "4.Wymień piosenkę do których tańczy się\n animacje na grupie czwartkowej.",
+      "answers": [
+        {
+          "text": "Palance",
+          "points": 10,
+          "isShow": false,
+          "sounds": "assets/audio/palance.mp3"
+
+        },
+        {
+          "text": "Polola",
+          "points": 16,
+          "isShow": false,
+          "sounds": "assets/audio/Polala.mp3"
+        },
+        {
+          "text": "Indyki el pavo",
+          "points": 20,
+          "isShow": false,
+          "sounds": "assets/audio/indyki.mp3"
+        },
+        {
+          "text": "Biała Mewa ",
+          "points": 32,
+          "isShow": false,
+          "sounds": "assets/audio/biala_mewa.mp3"
+
+        },
+        {
+          "text": "Lato Gorace",
+          "points": 17,
+          "isShow": false,
+          "sounds": "assets/audio/lato_gorace.mp3"
+
+        },
+        {
+          "text": "Łabedzie",
+          "points": 5,
+          "isShow": false,
+          "sounds": "assets/audio/labedzie.mp3"
+
+        },
+        {
+          "text": "Hajs trzeba rozjebać",
+          "points": 7,
+          "isShow": false,
+          "sounds": "assets/audio/hajs_trzeba_rozjebac.mp3"
+
+        }
+      ]
+    },
+    {
+      "question": "5.Wymień nazwę Pokemona",
+      "answers": [
+        {
+          "text": "Charizard",
+          "points": 10,
+          "isShow": false
+        },
+        {
+          "text": "Magikarp/Łukasz",
+          "points": 18,
+          "isShow": false
+        },
+        {
+          "text": "Pikachu",
+          "points": 39,
+          "isShow": false
+        },
+        {
+          "text": "Bulbasaur",
+          "points": 14,
+          "isShow": false
+        },
+        {
+          "text": "Mewtwo",
+          "points": 8,
+          "isShow": false
+        },
+        {
+          "text": "Psajdak (Psyduck)",
+          "points": 6,
+          "isShow": false
+        },
+        {
+          "text": "Snorlax",
+          "points": 5,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "6. Wymień słynne teksty padające w tym towarzystwie",
+      "answers": [
+        {
+          "text": "dobrze,ale",
+          "points": 6,
+          "isShow": false
+        },
+        {
+          "text": "Siiii",
+          "points": 14,
+          "isShow": false
+        },
+        {
+          "text": "To są emocje",
+          "points": 24,
+          "isShow": false
+        },
+        {
+          "text": "odlot Lecimy do dubaju",
+          "points": 20,
+          "isShow": false
+        },
+        {
+          "text": "nie było",
+          "points": 10,
+          "isShow": false
+        },
+        {
+          "text": "Puuuuuu",
+          "points": 21,
+          "isShow": false
+        },
+        {
+          "text": "Jest 50 % szans ",
+          "points": 5,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "7.Dokończ zdanie: Pasować do siebie jak piętą do .........",
+      "answers": [
+        {
+          "text": "Czoła (Łukasza)",
+          "points": 62,
+          "isShow": false
+        },
+        {
+          "text": "Skarpety (czasem dziurawej)",
+          "points": 17,
+          "isShow": false
+        },
+        {
+          "text": "Buta",
+          "points": 10,
+          "isShow": false
+        },
+        {
+          "text": "Achilessa",
+          "points": 11,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "8.Do czego wystarczą 2 palce?",
+      "answers": [
+        {
+          "text": "Palcówka/ rozkoszy",
+          "points": 19,
+          "isShow": false
+        },
+        {
+          "text": "Prowadzenia np partnerki/vasillali",
+          "points": 39,
+          "isShow": false
+        },
+        {
+          "text": "Dłubania w nosie",
+          "points": 14,
+          "isShow": false
+        },
+        {
+          "text": "Pisania (klawiaturze/ smsów)",
+          "points": 18,
+          "isShow": false
+        },
+        {
+          "text": "Szcześcia",
+          "points": 10,
+          "isShow": false
+        }
+      ]
+    }
+  ]
+}
