@@ -1,1 +1,0 @@
- /Users/bartoszkoltuniak/Desktop/familiada/familiada/.dart_tool/flutter_gen/gen_l10n/app_localizations_en.dart /Users/bartoszkoltuniak/Desktop/familiada/familiada/.dart_tool/flutter_gen/gen_l10n/app_localizations.dart:  /Users/bartoszkoltuniak/Desktop/familiada/familiada/l10n.yaml /Users/bartoszkoltuniak/Desktop/familiada/familiada/lib/src/localization/app_en.arb
