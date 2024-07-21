@@ -30,126 +30,121 @@ class ParticipantScreen extends StatelessWidget {
       ),
       body: gameModel.isFinishedFirstStage
           ? summaryScreen(gameModel, context)
-          : NestedScrollView(
-            headerSliverBuilder:(context, innerBoxIsScrolled) => [],
-            body: Expanded(
-              child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    TeamWidget(
-                      team: gameModel.teams[0],
-                      game: gameModel,
-                    ),
-                    Expanded(
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.only(left: 16, right: 16, bottom: 16),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          : Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                TeamWidget(
+                  team: gameModel.teams[0],
+                  game: gameModel,
+                ),
+                Expanded(
+                  child: Padding(
+                    padding:
+                        const EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisSize: MainAxisSize.max,
                           children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                GestureDetector(
-                                  onTap: () => gameModel.showCurrentQuestion(),
-                                  child: Text(
-                                    gameModel.currentQuestion.isShownQuestion
-                                        ? '${gameModel.currentQuestion.questionTitle}'
-                                        : questionHideText(gameModel
-                                            .currentQuestion.questionTitle.length),
-                                    style:
-                                        Theme.of(context).textTheme.headlineMedium,
-                                    textAlign: TextAlign.center,
-                                  ),
-                                ),
-                                SizedBox(height: 20),
-                                ...gameModel.currentAnswers
-                                    .map((answer) => Padding(
-                                          padding: const EdgeInsets.only(top: 32),
-                                          child: GestureDetector(
-                                            onTap: () {
-                                              gameModel.showAnswer(gameModel
-                                                  .currentAnswers
-                                                  .indexOf(answer));
-                                            },
-                                            child: Row(
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.spaceBetween,
+                            GestureDetector(
+                              onTap: () => gameModel.showCurrentQuestion(),
+                              child: Text(
+                                gameModel.currentQuestion.isShownQuestion
+                                    ? '${gameModel.currentQuestion.questionTitle}'
+                                    : questionHideText(gameModel
+                                        .currentQuestion.questionTitle.length),
+                                style:
+                                    Theme.of(context).textTheme.headlineMedium,
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                            SizedBox(height: 20),
+                            ...gameModel.currentAnswers
+                                .map((answer) => Padding(
+                                      padding: const EdgeInsets.only(top: 32),
+                                      child: GestureDetector(
+                                        onTap: () {
+                                          gameModel.showAnswer(gameModel
+                                              .currentAnswers
+                                              .indexOf(answer));
+                                        },
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.spaceBetween,
+                                          children: [
+                                            Row(
                                               children: [
-                                                Row(
-                                                  children: [
-                                                    Text(
-                                                      (gameModel.currentAnswers
-                                                                      .indexOf(
-                                                                          answer) +
-                                                                  1)
-                                                              .toString() +
-                                                          ". ",
-                                                      style: answerTextStyle,
-                                                    ),
-                                                    Text(
-                                                        answer.isShown == true
-                                                            ? answer.name
-                                                            : anwerHideText,
-                                                        style: answerTextStyle),
-                                                  ],
-                                                ),
                                                 Text(
-                                                  answer.isShown == true
-                                                      ? answer.points.toString()
-                                                      : anwerHidePointText,
+                                                  (gameModel.currentAnswers
+                                                                  .indexOf(
+                                                                      answer) +
+                                                              1)
+                                                          .toString() +
+                                                      ". ",
                                                   style: answerTextStyle,
                                                 ),
+                                                Text(
+                                                    answer.isShown == true
+                                                        ? answer.name
+                                                        : anwerHideText,
+                                                    style: answerTextStyle),
                                               ],
                                             ),
-                                          ),
-                                        ))
-                                    .toList(),
-                                SizedBox(height: 48),
-                                Row(
-                                  mainAxisAlignment: MainAxisAlignment.end,
-                                  children: [
-                                    Text(
-                                      "Suma     " +
-                                          gameModel
-                                              .actualPointsQuestionShown()
-                                              .toString(),
-                                      style: answerTextStyle,
-                                    ),
-                                  ],
+                                            Text(
+                                              answer.isShown == true
+                                                  ? answer.points.toString()
+                                                  : anwerHidePointText,
+                                              style: answerTextStyle,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ))
+                                .toList(),
+                            SizedBox(height: 48),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.end,
+                              children: [
+                                Text(
+                                  "Suma     " +
+                                      gameModel
+                                          .actualPointsQuestionShown()
+                                          .toString(),
+                                  style: answerTextStyle,
                                 ),
                               ],
                             ),
-                            Row(children: [
-                              Text("Mnoznik"),
-                              ElevatedButton(
-                                child: Text("-"),
-                                onPressed: () {
-                                  gameModel.updateMultipler(-1);
-                                },
-                              ),
-                              Text(gameModel.multiplier.toString()),
-                              ElevatedButton(
-                                child: Text("+"),
-                                onPressed: () {
-                                  gameModel.updateMultipler(1);
-                                },
-                              ),
-                            ]),
                           ],
                         ),
-                      ),
+                        Row(children: [
+                          Text("Mnoznik"),
+                          ElevatedButton(
+                            child: Text("-"),
+                            onPressed: () {
+                              gameModel.updateMultipler(-1);
+                            },
+                          ),
+                          Text(gameModel.multiplier.toString()),
+                          ElevatedButton(
+                            child: Text("+"),
+                            onPressed: () {
+                              gameModel.updateMultipler(1);
+                            },
+                          ),
+                        ]),
+                      ],
                     ),
-                    TeamWidget(
-                      team: gameModel.teams[1],
-                      game: gameModel,
-                    ),
-                  ],
+                  ),
                 ),
+                TeamWidget(
+                  team: gameModel.teams[1],
+                  game: gameModel,
+                ),
+              ],
             ),
-          ),
     );
   }
 
