@@ -1,0 +1,154 @@
+{
+  "questions": [
+    {
+      "question": "1.Co można podnieść bez użycia rąk",
+      "answers": [
+        {
+          "text": "Noge",
+          "points": 31,
+          "isShow": false
+        },
+        {
+          "text": "Ciśnienie",
+          "points": 23,
+          "isShow": false
+        },
+        {
+          "text": "Pracie penis siusiak  pindol ",
+          "points": 16,
+          "isShow": false
+        },
+        {
+          "text": "Głowe",
+          "points": 13,
+          "isShow": false
+        },
+        {
+          "text": "Głos",
+          "points": 10,
+          "isShow": false
+        },
+        {
+          "text": "Wzrok",
+          "points": 7,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "2.Miejsce z którego łatwiej wejść niż wyjść",
+      "answers": [
+        {
+          "text": "Forum Tanca/ Zajecia czwartkowe",
+          "points": 28,
+          "isShow": false
+        },
+        {
+          "text": "Wiezienie",
+          "points": 23,
+          "isShow": false
+        },
+        {
+          "text": "Labirynt",
+          "points": 18,
+          "isShow": false
+        },
+        {
+          "text": "Bar / pub / knajpa /klub",
+          "points": 15,
+          "isShow": false
+        },
+        {
+          "text": "Łózko",
+          "points": 9,
+          "isShow": false
+        },
+        {
+          "text": "Wagina/ cipka",
+          "points": 7,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "3.Czego nie powinno się mówić osobie z którą chcesz zatańczyć ",
+      "answers": [
+        {
+          "text": "Smierdzisz / brzydko pachniesz / umyj sie ",
+          "points": 33,
+          "isShow": false
+        },
+        {
+          "text": "Wygladasz jak z bachaty/ zatanczysz bachate ",
+          "points": 26,
+          "isShow": false
+        },
+        {
+          "text": "Przepraszanie za wszystko",
+          "points": 20,
+          "isShow": false
+        },
+        {
+          "text": "Ruchasz sie czy trzeba z Tobą chodzić?",
+          "points": 13,
+          "isShow": false
+        },
+        {
+          "text": "Pierdolniemy się densa",
+          "points": 7,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "4.Więcej niż jedno zwierzę to",
+      "answers": [
+        {
+          "text": "Owca",
+          "points": 43,
+          "isShow": false
+        },
+        {
+          "text": "Lama",
+          "points": 31,
+          "isShow": false
+        },
+        {
+          "text": "Stado",
+          "points": 19,
+          "isShow": false
+        }
+      ]
+    },
+    {
+      "question": "5.Co mozna uslyszec zarowno w Łózku jak i na cmentarzu ",
+      "answers": [
+        {
+          "text": "Strasznie sztywny ",
+          "points": 34,
+          "isShow": false
+        },
+        {
+          "text": "Nie ta dziura",
+          "points": 26,
+          "isShow": false
+        },
+        {
+          "text": "Przesuń babcie",
+          "points": 20,
+          "isShow": false
+        },
+        {
+          "text": "Prosze Ksiedza to nie grzech ",
+          "points": 12,
+          "isShow": false
+        },
+        {
+          "text": "Ale tu zarosło od ostatniej wizyty",
+          "points": 8,
+          "isShow": false
+        }
+      ]
+    }
+  ]
+}

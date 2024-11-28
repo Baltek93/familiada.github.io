@@ -1,3 +1,4 @@
+import 'package:familiada/src/localizable.dart';
 import 'package:flutter/foundation.dart';
 import 'package:just_audio/just_audio.dart';
 
@@ -11,13 +12,18 @@ class GameModel extends ChangeNotifier {
   int multiplier = 1;
   int debugPoints = 0;
   int finalPoints = 0;
-  GameModel(this.questions, this.finalQuestions);
+  GameModel(
+    this.questions,
+    this.finalQuestions,
+  );
 
   List<TeamModel> teams = [
     TeamModel(
-      "Team Papi",
+      localizations[BaseKeys.team1] ?? "",
     ),
-    TeamModel("Team Mami")
+    TeamModel(
+      localizations[BaseKeys.team2] ?? "",
+    )
   ]; // Zakładamy dwóch graczy/drużyn
   int currentQuestionIndex = 0;
 

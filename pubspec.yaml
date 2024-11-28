@@ -32,5 +32,6 @@ flutter:
     # Add assets from the images directory to the application.
     - assets/images/
     - assets/questions.json
+    - assets/questions_andrzejki.json
     - assets/final_questions.json
     - assets/audio/
