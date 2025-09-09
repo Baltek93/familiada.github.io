@@ -17,7 +17,14 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  just_audio: ^0.9.38
+
+  # Core audio player API
+  just_audio: ^0.10.0
+
+  # Linux implementation for just_audio v0.10+
+  just_audio_mpv: ^0.1.0
+
+  #just_audio: ^0.9.46
   flame_audio: 2.1.7
   provider: ^6.0.1
   window_manager: ^0.3.8  # Dodaj pakiet do zarządzania oknami

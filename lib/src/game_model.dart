@@ -7,7 +7,7 @@ class GameModel extends ChangeNotifier {
   List<QuestionModel> finalQuestions;
   bool isRunIntro = true;
   bool isRunFinal = true;
-  final player = AudioPlayer(); // Create a player
+  final AudioPlayer player = AudioPlayer(); // Create a player
   bool isFinishedFirstStage = false;
   int multiplier = 1;
   int debugPoints = 0;
@@ -19,21 +19,30 @@ class GameModel extends ChangeNotifier {
 
   List<TeamModel> teams = [
     TeamModel(
-      localizations[BaseKeys.team1] ?? "",
+      localizations[BaseKeys.team1] ?? "Team1",
     ),
     TeamModel(
-      localizations[BaseKeys.team2] ?? "",
+      localizations[BaseKeys.team2] ?? "Team2",
     )
   ]; // Zakładamy dwóch graczy/drużyn
   int currentQuestionIndex = 0;
 
+  void playSound(String path) async {
+    try{
+
+      await player.setAsset(path); // Schemes: (https: | file: | asset:)
+      player.play();
+      //await player.dispose();
+      //await player.stop();
+    } catch (e) {
+      debugPrint("sound playback failed: $e");
+    }
+  }
+
+
   Future<void> runIntro() async {
     if (isRunIntro) {
-      // FlameAudio.bgm.play('', volume: 1);
-      await player.setAsset(
-          'assets/audio/intro.mp3'); // Schemes: (https: | file: | asset: )
-      player.play(); // Play without waiting for completion
-      await player.setVolume(1); // Half as loud
+      playSound('assets/audio/intro.mp3');
       isRunIntro = false;
       notifyListeners();
     }
@@ -42,11 +51,10 @@ class GameModel extends ChangeNotifier {
   Future<void> runFinal() async {
     if (isRunFinal) {
       // FlameAudio.bgm.play('', volume: 1);
-      await player.setAsset(
-          'assets/audio/final.mp3'); // Schemes: (https: | file: | asset: )
-      player.play(); // Play without waiting for completion
-      await player.setVolume(1); // Half as loud
       isRunFinal = false;
+      playSound('assets/audio/final.mp3'); // Schemes: (https: | file: | asset: )
+      //player.play(); // Play without waiting for completion
+      //await player.setVolume(1); // Half as loud
       notifyListeners();
     }
   }
@@ -58,8 +66,7 @@ class GameModel extends ChangeNotifier {
       isFinishedFirstStage = true;
     }
     clearErrors();
-    await player.setAsset('assets/audio/przed_po.mp3');
-    player.play();
+    playSound('assets/audio/przed_po.mp3');
     notifyListeners();
   }
 
@@ -109,19 +116,19 @@ class GameModel extends ChangeNotifier {
   Future<void> showAnswer(int i) async {
     if (questions[currentQuestionIndex].answers.length >= i) {
       questions[currentQuestionIndex].answers[i].isShown = true;
-      questions[currentQuestionIndex].answers[i].sound != null
-          ? await player
-              .setAsset(questions[currentQuestionIndex].answers[i].sound!)
-          : await player.setAsset('assets/audio/good_answer_v2.mp3');
-      player.play();
+      String soundPath = 'assets/audio/good_answer.mp3';
+      if (questions[currentQuestionIndex].answers[i].sound != null){
+        soundPath = questions[currentQuestionIndex].answers[i].sound!;
+      }
+      playSound(soundPath);
       notifyListeners();
     }
   }
 
   Future<void> badAnswer(TeamModel team) async {
-    await player.setAsset('assets/audio/bad_answer_v2.mp3');
-    player.play();
     team.errorsForQuestion++;
+    playSound('assets/audio/bad_answer_v2.mp3');
+    //player.play();
     notifyListeners();
   }
 
@@ -141,9 +148,7 @@ class GameModel extends ChangeNotifier {
   }
 
   badAnswerForBattle(TeamModel team) async {
-    await player.setAsset('assets/audio/bad_answer.mp3');
-    player.play();
-    team.errorForBattle = true;
+    playSound('assets/audio/bad_answer.mp3');
     notifyListeners();
   }
 
@@ -164,14 +169,14 @@ class GameModel extends ChangeNotifier {
   }
 
   addFinalPoints(int? points) async {
+    final player = AudioPlayer();
     if (points != null) {
-      if (points > 0) {
-        await player.setAsset('assets/audio/good_answer_v2.mp3');
-      } else {
-        await player.setAsset('assets/audio/bad_answer_v2.mp3');
-      }
-      player.play();
       finalPoints += points;
+      if (points > 0) {
+        playSound('assets/audio/good_answer_v2.mp3');
+      } else {
+        playSound('assets/audio/bad_answer_v2.mp3');
+      }
     }
     notifyListeners();
   }

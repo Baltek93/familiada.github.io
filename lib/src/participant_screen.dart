@@ -151,7 +151,6 @@ class ParticipantScreen extends StatelessWidget {
   Widget summaryScreen(GameModel gameModel, BuildContext context) {
     var winTeam = gameModel.winTeam();
     return Center(
-      child: Expanded(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -159,12 +158,11 @@ class ParticipantScreen extends StatelessWidget {
               "Wygrała druzyna ${winTeam.name}\nSuma punktów wyniosła: ${winTeam.points}",
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            SizedBox(
-              height: 20,
-            ),
+            // SizedBox(
+            //   height: 20,
+            // ),
           ],
         ),
-      ),
     );
   }
 
