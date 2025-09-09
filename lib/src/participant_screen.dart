@@ -1,6 +1,3 @@
-import 'dart:convert';
-
-import 'package:familiada/src/big_final_screen.dart';
 import 'package:familiada/src/game_model.dart';
 import 'package:familiada/src/teams_widget.dart';
 import 'package:flutter/material.dart';
@@ -151,18 +148,18 @@ class ParticipantScreen extends StatelessWidget {
   Widget summaryScreen(GameModel gameModel, BuildContext context) {
     var winTeam = gameModel.winTeam();
     return Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-              "Wygrała druzyna ${winTeam.name}\nSuma punktów wyniosła: ${winTeam.points}",
-              style: Theme.of(context).textTheme.titleLarge,
-            ),
-            // SizedBox(
-            //   height: 20,
-            // ),
-          ],
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            "Wygrała druzyna ${winTeam.name}\nSuma punktów wyniosła: ${winTeam.points}",
+            style: Theme.of(context).textTheme.titleLarge,
+          ),
+          // SizedBox(
+          //   height: 20,
+          // ),
+        ],
+      ),
     );
   }
 

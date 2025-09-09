@@ -7,7 +7,7 @@ class GameModel extends ChangeNotifier {
   List<QuestionModel> finalQuestions;
   bool isRunIntro = true;
   bool isRunFinal = true;
-  final AudioPlayer player = AudioPlayer(); // Create a player
+  AudioPlayer player = AudioPlayer(); // Create a player
   bool isFinishedFirstStage = false;
   int multiplier = 1;
   int debugPoints = 0;
@@ -28,17 +28,20 @@ class GameModel extends ChangeNotifier {
   int currentQuestionIndex = 0;
 
   void playSound(String path) async {
-    try{
-
+    try {
+      if (player.playing) {
+        await player.dispose();
+        await player.stop();
+        player = AudioPlayer();
+      }
       await player.setAsset(path); // Schemes: (https: | file: | asset:)
-      player.play();
+      await player.play();
       //await player.dispose();
       //await player.stop();
     } catch (e) {
       debugPrint("sound playback failed: $e");
     }
   }
-
 
   Future<void> runIntro() async {
     if (isRunIntro) {
@@ -52,7 +55,8 @@ class GameModel extends ChangeNotifier {
     if (isRunFinal) {
       // FlameAudio.bgm.play('', volume: 1);
       isRunFinal = false;
-      playSound('assets/audio/final.mp3'); // Schemes: (https: | file: | asset: )
+      playSound(
+          'assets/audio/final.mp3'); // Schemes: (https: | file: | asset: )
       //player.play(); // Play without waiting for completion
       //await player.setVolume(1); // Half as loud
       notifyListeners();
@@ -117,7 +121,7 @@ class GameModel extends ChangeNotifier {
     if (questions[currentQuestionIndex].answers.length >= i) {
       questions[currentQuestionIndex].answers[i].isShown = true;
       String soundPath = 'assets/audio/good_answer.mp3';
-      if (questions[currentQuestionIndex].answers[i].sound != null){
+      if (questions[currentQuestionIndex].answers[i].sound != null) {
         soundPath = questions[currentQuestionIndex].answers[i].sound!;
       }
       playSound(soundPath);
@@ -169,7 +173,6 @@ class GameModel extends ChangeNotifier {
   }
 
   addFinalPoints(int? points) async {
-    final player = AudioPlayer();
     if (points != null) {
       finalPoints += points;
       if (points > 0) {

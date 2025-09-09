@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 class ButtonNegative extends StatelessWidget {
   final VoidCallback? onPressed;
   final bool isShowX;
-  double width;
-  double height;
+  final double width;
+  final double height;
 
   ButtonNegative({
     required this.onPressed,

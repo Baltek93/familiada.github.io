@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:familiada/src/game_model.dart';
 import 'package:familiada/src/home_final.dart';
-import 'package:familiada/src/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
@@ -35,8 +34,8 @@ class MyApp extends StatelessWidget {
 Future<List<List<QuestionModel>>> readJson() async {
   final questionData =
       await json.decode(await rootBundle.loadString('assets/questions.json'));
-  final questionFinallyData =
-      await json.decode(await rootBundle.loadString('assets/final_questions.json'));
+  final questionFinallyData = await json
+      .decode(await rootBundle.loadString('assets/final_questions.json'));
   final List<List<QuestionModel>> listQuestions = [];
   final questions = (questionData["questions"] as List)
       .map((e) => QuestionModel.fromJson(e))

@@ -3,8 +3,8 @@ import 'package:familiada/src/game_model.dart';
 import 'package:flutter/material.dart';
 
 class TeamWidget extends StatelessWidget {
-  TeamModel team;
-  GameModel game;
+  final TeamModel team;
+  final GameModel game;
   TeamWidget({required this.team, required this.game});
   @override
   Widget build(BuildContext context) {
@@ -76,7 +76,10 @@ class TeamWidget extends StatelessWidget {
                             )
                           : game.nextQuestion(team);
                     },
-                    child: Text(game.currentQuestionIndex<(game.questions.length-1) ? "nastepne pytanie " : "przejdz do podsumowania")),
+                    child: Text(
+                        game.currentQuestionIndex < (game.questions.length - 1)
+                            ? "nastepne pytanie "
+                            : "przejdz do podsumowania")),
                 SizedBox(
                   height: 20,
                 ),

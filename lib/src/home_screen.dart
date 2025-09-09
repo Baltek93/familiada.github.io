@@ -1,5 +1,5 @@
-import 'package:familiada/src/big_final_screen.dart';
 import 'package:flutter/material.dart';
+
 import 'participant_screen.dart';
 
 class HomeScreen extends StatelessWidget {
