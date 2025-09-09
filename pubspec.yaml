@@ -42,3 +42,7 @@ flutter:
     - assets/questions_andrzejki.json
     - assets/final_questions.json
     - assets/audio/
+    - private_assets/audio/
+    - private_assets/images/
+    - private_assets/questions.json
+  
