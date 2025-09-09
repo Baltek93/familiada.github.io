@@ -33,23 +33,22 @@ class MyApp extends StatelessWidget {
 
 Future<List<List<QuestionModel>>> readJson() async {
   final questionData =
-      // await json.decode(await rootBundle.loadString('assets/questions.json'));
-      await json.decode(await rootBundle.loadString('assets/questions_andrzejki.json'));
+      await json.decode(await rootBundle.loadString('private_assets/questions.json'));
 
-      
-  final questionFinallyData =
-      await json.decode(await rootBundle.loadString('assets/final_questions.json'));
+  // final questionFinallyData =
+  //     await json.decode(await rootBundle.loadString('private_assets/final_questions.json'));
   final List<List<QuestionModel>> listQuestions = [];
   final questions = (questionData["questions"] as List)
       .map((e) => QuestionModel.fromJson(e))
       .toList();
 
-  final questionsFinally = (questionFinallyData["questions"] as List)
-      .map((e) => QuestionModel.fromJson(e))
-      .toList();
+  // final questionsFinally = (questionFinallyData["questions"] as List)
+  //     .map((e) => QuestionModel.fromJson(e))
+  //     .toList();
 
   listQuestions.add(questions);
-  listQuestions.add(questionsFinally);
+  // listQuestions.add(questionsFinally);
+  
 
   return listQuestions;
 }
