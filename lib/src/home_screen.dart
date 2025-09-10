@@ -33,7 +33,7 @@ class HomeScreen extends StatelessWidget {
                             builder: (context) => ParticipantScreen()),
                       );
                     },
-                    child: Text('Wcisnij Mami by zacząć'),
+                    child: Text('Click Here To Start'),
                   ),
                 ),
               ],
